@@ -2,6 +2,19 @@ const table = document.querySelector('.table');
 const addBooks = document.querySelector('.addBooks');
 const formAddBooks = document.querySelector('.formAddBooks');
 
+const input = document.querySelector('.input');
+
+const inputPassword = document.querySelector('#password');
+
+input.addEventListener('focus', () => {
+    input.classList.add('focus');
+});
+
+inputPassword.addEventListener('blur', () => {
+    if(inputPassword == "");
+        inputPassword.classList.remove('focus');
+    
+});
 let livre1 = {
     name: 'The book one',
     auteur: 'Steve Balalou',
