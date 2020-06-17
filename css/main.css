@@ -49,3 +49,7 @@ p{
 .logbtn:hover{
     background-position: right;
 }
+
+input, textarea{
+    width: 100%;
+}
