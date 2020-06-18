@@ -1,0 +1,26 @@
+{
+  "name": "bibli_oh_tech-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iamglads/bibli_oh_tech-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iamglads/bibli_oh_tech-/issues"
+  },
+  "homepage": "https://github.com/Iamglads/bibli_oh_tech-#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "twig": "^1.15.1"
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>BIBLI OH TECH</title>
+</head>
+
+<body>
+        
+    <div class="container">
+        <h1 class="border border-dark m-2 p-2 rounded text-center p_bgColorBlue text-white">Livres disponibles</h1>
+        <div>
+        <a class="navbar-brand alert" href="/">Quitter</a>
+            <table class="table text-center monTableau" id="#tableauDesLivres">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Nombre de pages</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> <a href="/livres/titre1"> Titre 1 </a></td>
+                    <td> Auteur 1</td>
+                    <td><button>Modifier</button></td>
+                    <td><button>Suprimer</button></td>
+                </tr>
+                  <tr>
+                    <td> <a href="/livres/titr2"> Titre 2 </a></td>
+                    <td> Auteur 2</td>
+                    <td><button>Modifier</button></td>
+                    <td><button>Suprimer</button></td>
+                </tr>
+                  <tr>
+                    <td> <a href="/livres/titre3"> Titre 3 </a></td>
+                    <td> Auteur 3</td>
+                    <td><button>Modifier</button></td>
+                    <td><button>Suprimer</button></td>
+                </tr>
+                  <tr>
+                    <td> <a href="/livres/titre4"> Titre 4 </a></td>
+                    <td> Auteur 4</td>
+                    <td><button>Modifier</button></td>
+                    <td><button>Suprimer</button></td>
+                </tr>
+
+                </tbody>
+
+            </table>
+            <button class="btn addBooks">Ajouter un livre</button>
+            <div id="addForm" class="formAddBooks">
+                <form action="">
+                    <div>
+                        <label for="Name"> Titre du livre</label>
+                        <input type="text" class="bookTitle">
+                    </div>
+                    <div>
+                        <label for="author"> Auteur</label>
+                        <input type="text" class="bookAuther">
+                    </div>
+                    <div>
+                        <label for="pages"> Nombre de pages</label>
+                        <input type="number" class="bookPages">
+                    </div>
+                    <div>
+                        <label for="pages"> Nombre de pages</label>
+                        <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                    </div>
+                    <button id="validForm" class="btn">Valider</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
