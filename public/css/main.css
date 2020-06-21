@@ -21,9 +21,21 @@ p{
     font-size: 1em;
     text-align: center;
 }
+
+.divider{
+    width: 2px;
+    height: 450px;
+    background: #ef9a9a;
+}
+@media screen and (max-width: 600px) {
+    .divider {
+      display: none;
+    }
+  }
+
 .main{
-    width: 360px;
-    height: 580px;
+    width: auto;
+    height: 570px;
     background: #f1f1f1;
     padding: 80px 40px;
     border-radius: 10px;
@@ -31,6 +43,19 @@ p{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+@media screen and (max-width: 600px) {
+    .main {
+      display: block;
+      height: auto;
+    }
+  }
+
+.form1, .form2{
+    margin: 20px;
 }
 .txtb{
     border-bottom: 2px solid #adadad;
