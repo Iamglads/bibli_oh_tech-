@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %} 
+
+  {% block contenu%} 
+  <section class="container">
+        <div class="main">
+            <form action="#" class="login-form">
+                <h1> Créez votre compte </h1>
+                <div class="txtb">
+                    <input type="email" name="email" id="email" class="input" placeholder="E-mail">
+                </div>
+                <div class="txtb">
+                    <input type="email" name="email" id="email-confirm" class="input" placeholder="Confirmez votre e-mail">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="password" id="password" class="input" placeholder="Mot de passe">
+                </div>
+                <div class="txtb">
+                    <input type="password" name="password" id="password" class="input" placeholder="Confirmez votre Mot de passe">
+                </div>
+                    <input type="submit" class="btn-signup" value="Valider">
+            </form>
+            <p> Vous avez pas de compte? <a href="/">Connectez-vous !</a></p>
+        </main> 
+</section>
+{% endblock contenu%}

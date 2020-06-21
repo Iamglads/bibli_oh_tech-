@@ -1,0 +1,22 @@
+
+{% extends "base.html.twig" %} 
+
+{% block contenu%} 
+    <section class="container">
+        <div class="main">
+                <h1>BIBLI OH TECH</h1>
+                <form action="#" class="login-form">
+                    <div class="txtb">
+                        <input type="text" name="username" id="username" class="input">
+                        <span data-placeholder="Identifiant"></span>
+                    </div>
+                    <div class="txtb">
+                        <input type="password" name="password" id="password" class="input">
+                        <span data-placeholder="Mot de passe"></span>
+                    </div>
+                    <input type="submit" class="btn" value="Rentrer">
+                </form>
+                <p> Vous n'avez pas de compte? <a href="/signup">Créez votre compte</a></p>
+        </div>   
+    </section>
+{% endblock contenu%}

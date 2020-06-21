@@ -13,7 +13,7 @@
 <body>
         
     <div class="container">
-        <h1 class="border border-dark m-2 p-2 rounded text-center p_bgColorBlue text-white">Livres disponibles</h1>
+        <h1 class="rounded text-center  text-white">Livres disponibles</h1>
         <div>
         <a class="navbar-brand alert" href="/">Quitter</a>
          {% block contenu%} 
@@ -29,11 +29,15 @@
                 <tbody>
                     {% for livres in livres %}
                     <tr>
-                        <td> <a href="/livres/{{livre._id}}"> {{livres.nom }}</a></td>
+                        <td> <a href="livres/details/{{livre._id}}"> {{livres.nom }}</a></td>
                         <td>{{ livres.auteur }}</td>
                         <td>{{ livres.pages }}</td>
                         <td><button>Modifier</button></td>
-                        <td><button>Suprimer</button></td>
+                        <td>
+                            <form method="POST" action="/livres/delete/{{livres._id}}" onSubmit = "return confirm('Voulez-vous vraiement supprimer?');">
+                                <button class=" btn-danger" type="submit">Supprimer</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </body>

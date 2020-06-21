@@ -4,10 +4,6 @@ body{
     background: #ef9a9a;
 }
 
-h1, h3, h4, h5, h6{
-    font-family: 'Sigmar One', cursive;
-}
-
 h1{
     text-align: center;
     margin-bottom: 60px;
@@ -22,17 +18,6 @@ p{
     text-align: center;
 }
 
-.divider{
-    width: 2px;
-    height: 450px;
-    background: #ef9a9a;
-}
-@media screen and (max-width: 600px) {
-    .divider {
-      display: none;
-    }
-  }
-
 .main{
     width: auto;
     height: 570px;
@@ -43,20 +28,9 @@ p{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
 }
-@media screen and (max-width: 600px) {
-    .main {
-      display: block;
-      height: auto;
-    }
-  }
 
-.form1, .form2{
-    margin: 20px;
-}
+
 .txtb{
     border-bottom: 2px solid #adadad;
     position: relative;
@@ -114,6 +88,15 @@ p{
     cursor: pointer;
     transition: .5s;
     font-size: 1.9em;
+}
+.btn-signup{
+    cursor: pointer;
+    background-image: linear-gradient(1300deg, #3498db, #ef9a9a);
+    width: 100%;
+    height: 50px;
+    color: white;
+    outline: none;
+    border: none;
 }
 .logbtn:hover{
     background-position: right;

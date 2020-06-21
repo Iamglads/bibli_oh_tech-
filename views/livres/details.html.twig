@@ -11,12 +11,25 @@
 </head>
 
 <body>
-{% extends "base.html.twig" %} 
 
+{% block titre} {{livres.nom}} {% endblock %}
 {% block contenu%} 
-
+<div class="row m-2">
+    <div class="col-6">
+        <h2></h2>
+        <div>Auteur : {{livres.auteur}}</div>
+        <div>Pages : {{livres.pages}}</div>
+        <img src="https://picsum.photos/200/200" alt="">
+    </div>
+    <div class="col-6">
+        <h2>Résumé</h2>
+        <div>
+            {{livres.description}}
+        </div>
+    </div>
+</div>
 {% endblock contenu%}
-    <script src="js/main.js"></script>
+
 </body>
 
 </html>
