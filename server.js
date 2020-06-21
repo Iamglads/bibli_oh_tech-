@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 
 
 
-mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://glad:<PASSWORD>@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
 {
     useNewUrlParser:true,
     useUnifiedTopology:true
