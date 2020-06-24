@@ -20,7 +20,7 @@ router.get('/livres', (req, res) => {
         .then(livres => {
             console.log(livres);
 
-            res.render('livres/livre.html.twig', { livres: livres });
+            res.render('livres/livre.html.twig', { livres: livres, message: res.locals.message });
 
         })
         .catch(error => { console.log(error) });
@@ -28,14 +28,17 @@ router.get('/livres', (req, res) => {
 
 router.get('/livres/:id', (req, res) => {
     livresSchema.findById(req.params.id)
-    .exec()
-    .then(resulat => {
-        res.render('livres/details.html.twig', {resulat: resulat})
-    })
-    .catch(error => { console.log(error);
-    })
-    
+        .exec()
+        .then(resulat => {
+            res.render('livres/details.html.twig', { resulat: resulat })
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
 });
+
+
 
 router.post('/livres', (req, res) => {
     console.log(req.body);
@@ -61,6 +64,10 @@ router.post("/livres/delete/:id", (req, res) => {
     livresSchema.remove({ _id: req.params.id })
         .exec()
         .then(resultat => {
+            req.session.message = {
+                Type: 'success',
+                contenu: 'Suppression effectuée !'
+            }
             res.redirect('/livres');
         })
         .catch(error => {
