@@ -18,6 +18,7 @@ server.use(session({
 
 
 
+<<<<<<< HEAD
 mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
@@ -25,6 +26,15 @@ mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/B
     })
     .then(() => console.log('Connexion réussie !'))
     .catch(() => console.log('Connexion échouée !'));
+=======
+mongoose.connect("mongodb+srv://glad:<PASSWORD>@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
+{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+})
+.then(() => console.log('Connexion réussie !'))
+.catch(() => console.log('Connexion échouée !'));
+>>>>>>> 2c7b2ccb2d19feaa3bf2db3ba24a4fe662d33861
 
 //middleaware
 server.use(express.static("public"));
