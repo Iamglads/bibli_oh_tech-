@@ -5,7 +5,8 @@ const livresSchema = mongoose.Schema({
     nom: String,
     auteur: String,
     pages: Number,
-    description: String
+    description: String,
+    image: String
 })
 
 const livresModel = mongoose.model("livres", livresSchema);

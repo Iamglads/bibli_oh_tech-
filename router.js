@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 const twig = require('twig');
-
-let livresSchema = require('./model/livres.model');
-const mongoose = require('mongoose');
+const livreController = require('./controllers/livre.controller');
 
 router.get('/', (req, res) => {
     res.render("./log/login.html.twig");
@@ -11,31 +10,6 @@ router.get('/', (req, res) => {
 
 router.get('/signup', (req, res) => {
     res.render("./log/signup.html.twig");
-});
-
-router.get('/livres', (req, res) => {
-    // nous renvoyons tous les livres
-    let livre = livresSchema.find()
-        .exec()
-        .then(livres => {
-            console.log(livres);
-
-            res.render('livres/livre.html.twig', { livres: livres, message: res.locals.message });
-
-        })
-        .catch(error => { console.log(error) });
-});
-
-router.get('/livres/:id', (req, res) => {
-    livresSchema.findById(req.params.id)
-        .exec()
-        .then(resulat => {
-            res.render('livres/details.html.twig', { resulat: resulat })
-        })
-        .catch(error => {
-            console.log(error);
-        })
-
 });
 
 /*
@@ -76,41 +50,10 @@ const upload = multer({
 =========================================
 */
 
-router.post('/livres', upload.single("image"), (req, res) => {
-    console.log(req.body);
-
-    const livre = new livresSchema({
-        _id: new mongoose.Types.ObjectId(),
-        nom: req.body.titre,
-        auteur: req.body.auteur,
-        pages: req.body.pages,
-        description: req.body.description
-    })
-    livre.save()
-        .then(resultat => {
-            console.log(resultat);
-            res.redirect("/livres")
-        })
-        .catch(error => {
-            console.log(error);
-        })
-});
-
-router.post("/livres/delete/:id", (req, res) => {
-    livresSchema.remove({ _id: req.params.id })
-        .exec()
-        .then(resultat => {
-            req.session.message = {
-                Type: 'success',
-                contenu: 'Suppression effectuée !'
-            }
-            res.redirect('/livres');
-        })
-        .catch(error => {
-            console.log(error);
-        })
-
-});
+router.get('/livres/:id', livreController.livre_affichage);
+router.post('/livres', upload.single("image"), livreController.livres_ajouter); 
+router.get("/livres", livreController.livres_affichage);
+router.post("/livres/delete/:id", livreController.livre_suppression);
 
 
 // gestion des erreurs 

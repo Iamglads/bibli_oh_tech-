@@ -55,7 +55,7 @@
         {% endblock contenu%}
             <button class="btn addBooks">Ajouter un livre</button>
             <div id="addForm" class="formAddBooks">
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="Name"> Titre du livre</label>
                         <input type="text" class="bookTitle" name="titre">
@@ -72,11 +72,13 @@
                         <label for="pages"> Description</label>
                         <textarea name="description" id="description" cols="30" rows="5"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="image"> Image</label>
+                        <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
                     <button id="validForm" class="btn" type="submit">Valider</button>
                 </form>
-
             </div>
-
         </div>
     </div>
  <script src="/js/main.js"></script>
