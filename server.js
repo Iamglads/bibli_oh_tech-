@@ -6,16 +6,12 @@ const router = require('./router');
 const bodyParser = require("body-parser");
 const session = require('express-session');
 
-
 server.use(session({
     secret: 'keyboard cat',
     resave: true,
     saveUninitialized: true,
     cookie: { maxAge: 60000 }
 }))
-
-
-
 
 mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
     {
@@ -26,7 +22,7 @@ mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/B
     .catch(() => console.log('Connexion échouée !'));
 
 
-//middleaware
+    
 server.use(express.static("public"));
 server.use(morgan('dev'));
 server.use(bodyParser.urlencoded({ extended: false }));

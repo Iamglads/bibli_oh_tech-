@@ -35,8 +35,8 @@
                 <tbody>
                     {% for livres in livres %}
                     <tr>
-                        <td> <a href="livres/details/{{livre._id}}"> {{livres.nom }}</a></td>
-                        <td>{{ livres.auteur }}</td>
+                        <td> <a href="livres/details/{{livres._id}}"> {{livres.nom }}</a></td>
+                        <td> <a href="auteurs/auteur/{{ livres.auteur }}"> {{ livres.auteur }} </a></td>
                         <td>{{ livres.pages }}</td>
                         <td>
                             <button type="button" class=" btn-secondary">

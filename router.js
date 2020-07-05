@@ -3,13 +3,14 @@ const router = express.Router();
 const fs = require('fs');
 const twig = require('twig');
 const livreController = require('./controllers/livre.controller');
+const routerAuteur = require('./routes/auteurs');
 
 router.get('/', (req, res) => {
     res.render("./log/login.html.twig");
 });
 
-router.get('/signup', (req, res) => {
-    res.render("./log/signup.html.twig");
+router.get('/log/register', (req, res) => {
+    res.render("./log/register.html.twig");
 });
 
 /*
@@ -55,6 +56,7 @@ router.post('/livres', upload.single("image"), livreController.livres_ajouter);
 router.get("/livres", livreController.livres_affichage);
 router.post("/livres/delete/:id", livreController.livre_suppression);
 
+router.use('/', routerAuteur);
 
 // gestion des erreurs 
 router.use((req, res, next) => {
@@ -67,5 +69,6 @@ router.use((error, req, res) => {
     res.status(error.status || 500);
     res.end(error.message);
 });
+
 
 module.exports = router;
