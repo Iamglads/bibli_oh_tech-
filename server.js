@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const router = require('./router');
+const app = require('./app');
 const bodyParser = require("body-parser");
 const session = require('express-session');
 
@@ -13,6 +13,7 @@ server.use(session({
     cookie: { maxAge: 60000 }
 }))
 
+// Connexion à la base de donnée mongoDB avec mongoose
 mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
@@ -33,8 +34,8 @@ server.use((req, res, next) => {
     delete req.session.message;
     next();
 });
-server.use('/', router);
 
-
+// Notre application
+server.use('/', app);
 
 server.listen(4000);
