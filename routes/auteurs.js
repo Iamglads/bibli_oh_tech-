@@ -1,8 +1,8 @@
 const express = require('express');
-const app = express.Router();
+const router = express.Router();
 const auteurController = require('../controllers/auteurs');
 
-app.get("/auteurs/:id", auteurController.auteur_affichage );
+router.get("/auteurs/:id", auteurController.auteur_affichage );
 
 
-module.exports = app;
+module.exports = router;

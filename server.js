@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const app = require('./app');
+const router = require('./router');
 const bodyParser = require("body-parser");
 const session = require('express-session');
 
@@ -36,6 +36,6 @@ server.use((req, res, next) => {
 });
 
 // Notre application
-server.use('/', app);
+server.use('/', router);
 
 server.listen(4000);
