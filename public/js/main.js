@@ -1,7 +1,8 @@
+/*
 const table = document.querySelector('.table');
 const formAddBooks = document.querySelector('.formAddBooks');
 
-/*
+
 let input = document.querySelector('#username');
 input.addEventListener('focus', () => {
     input.classList.add('focus');
@@ -53,7 +54,7 @@ for (let i = 0; i <= allBooks.length; i++) {
 tableauLivres.innerHTML = listBooks;
 }
 
-*/
+
 
 const addBooks = document.querySelector('.addBooks');
 // Au click sur le bouton ajouter un livre le formulaire apparait 
@@ -61,7 +62,7 @@ addBooks.addEventListener('click', () => {
     const addForm = document.querySelector("#addForm").removeAttribute('class');
 });
 
-/* Recuperer les données envoyées du formaulaire et le stoquer dans le tableau des livres
+ Recuperer les données envoyées du formaulaire et le stoquer dans le tableau des livres
 
 const validForm = document.querySelector('#validForm');
 

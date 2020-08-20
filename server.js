@@ -14,7 +14,7 @@ server.use(session({
 }))
 
 // Connexion à la base de donnée mongoDB avec mongoose
-mongoose.connect("mongodb+srv://glad:<PASSWORD>@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://glad:Gladetjuju-973@cluster0-ste1b.mongodb.net/Biblio?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -37,5 +37,4 @@ server.use((req, res, next) => {
 
 // Notre application
 server.use('/', router);
-
 server.listen(4000);

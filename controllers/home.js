@@ -2,10 +2,10 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 
-exports.loginProject = (req, res) => {
+exports.homeLogin = (req, res) => {
     res.render("./log/login.html.twig");
 }
 
-exports.registerProjetc = (req, res) => {
+exports.register = (req, res) => {
     res.render("./log/register.html.twig");
 }

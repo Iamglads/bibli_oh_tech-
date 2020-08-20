@@ -1,14 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-const fs = require('fs');
+//const fs = require('fs');
 
 const routerAuteur = require('./routes/auteurs');
 const routerLivre = require('./routes/livres.route');
-const routerLogin = require('./routes/login')
-//const routerUser = require('./routes/user')
-
-
+const routerHome = require('./routes/home');
+const routerUser = require('./routes/user');
 
 
 /*
@@ -48,10 +45,10 @@ const upload = multer({
             Parametrage multer fin 
 =========================================
 */
-
+router.use('/', routerHome);
 router.use('/', routerAuteur);
 router.use('/', routerLivre);
-router.use('/', routerLogin);
+router.use('/', routerUser);
 
 
 

@@ -9,16 +9,13 @@ exports.livres_affichage = ((req, res) => {
         .exec()
         .then(livres => {
             console.log(livres);
-
             res.render('livres/livre.html.twig', { livres: livres, message: res.locals.message });
-
         })
         .catch(error => { console.log(error) });
 });
 
-exports.livres_ajouter = ((req, res) => {
+exports.livre_ajouter = ((req, res) => {
     console.log(req.body);
-
     const livre = new livresSchema({
         _id: new mongoose.Types.ObjectId(),
         nom: req.body.titre,
@@ -38,7 +35,7 @@ exports.livres_ajouter = ((req, res) => {
 });
 
 exports.livre_affichage = ((req, res) => {
-    livresSchema.findById(req.params.id)
+    livresSchema.findById(req.params._id)
         .exec()
         .then(resulat => {
             res.render('livres/details.html.twig', { resulat: resulat })
