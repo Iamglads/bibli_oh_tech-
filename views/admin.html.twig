@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>BIBLI OH TECH - admin</title>
+</head>
+
+<body>
+        
+    <div class="container">
+     {% block contenu%} 
+      <div>
+        <a class="navbar-brand alert" href="/">Quitter</a>
+
+         {% if message|length > 0 %}
+            <div class="alert alert-{{message.type}}" role="alert">
+                Supprimé
+            </div>
+         {% endif %}
+            <table class="table text-center monTableau" id="#tableauDesLivres">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Titre</th>
+                        <th>Auteur</th>
+                        <th>Nombre de pages</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for livres in livres %}
+                    <tr>
+                        <td> <a href="livres/details/{{livres._id}}"> {{livres.nom }}</a></td>
+                        <td> <a href="auteurs/auteur/{{ livres.auteur }}"> {{ livres.auteur }} </a></td>
+                        <td>{{ livres.pages }}</td>
+                        <td>
+                            <button type="button" class=" btn-secondary">
+                                <a href="/livres/modification/{{livre._id}}">Modifier</a>
+                            </button>
+                        </td>
+                        <td>
+                            <form method="POST" action="/livres/delete/{{livres._id}}" onSubmit = "return confirm('Voulez-vous vraiement supprimer?');">
+                                <button class=" btn-danger" type="submit">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </body>
+            </table>
+            
+            <button class="btn addBooks">Ajouter un livre</button>
+            
+        </div>
+        <div id="addForm" class="formAddBooks">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="Name"> Titre du livre</label>
+                    <input type="text" class="bookTitle" name="titre">
+                </div>
+                <div>
+                    <label for="author"> Auteur</label>
+                    <input type="text" class="bookAuther" name="auteur">
+                </div>
+                <div>
+                    <label for="pages"> Nombre de pages</label>
+                    <input type="number" class="bookPages" name="pages">
+                </div>
+                <div>
+                    <label for="pages"> Description</label>
+                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image"> Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image">
+                </div>
+                <button id="validForm" class="btn" type="submit">Valider</button>
+            </form>
+        </div>
+    {% endblock contenu%}
+    </div>
+ <script src="/js/main.js"></script>
+</body>
+
+</html>
